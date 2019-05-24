@@ -1,11 +1,11 @@
 import React from 'react';
-import App from '../../App'
 
 
-function Total () {
 
-  const total = Object.keys(props.state.selected)
-    .reduce((acc, curr) => acc + props.state.selected[curr].cost, 0);    
+function Total (props) {
+
+  const total = Object.keys(props.selected)
+    .reduce((acc, curr) => acc + props.selected[curr].cost, 0);    
 
 
   return(

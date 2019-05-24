@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Total from './components/Total/Total';
-import Customizer from './components/Customizer/Customizer';
+import Summary from './components/Summary/Summary';
 import Features from './components/Features/Features';
-import SelectedFeatures from './components/SelectedFeatures/SelectedFeatures';
+
 
 
 class App extends Component {
@@ -55,7 +55,7 @@ class App extends Component {
     //       .reduce((acc, curr) => acc + this.state.selected[curr].cost, 0);    
 
 
-    const features = Object.keys(this.props.features)
+/*     const features = Object.keys(this.props.features)
           .map(key => {
             const options = this.props.features[key].map((item, index) => {
               const selectedClass = item.name === this.state.selected[key].name ? 'feature__selected' : '';
@@ -78,19 +78,24 @@ class App extends Component {
               </ul>
             </div>
           });      
-
+ */
     return (
       <div className="App">
         <Header /> 
         <main>
           <section className="main__form">
             <h3>TECH SPECS AND CUSTOMIZATIONS</h3>
-            { features }
+            <Features
+              features={this.props.features}
+              selected={this.state.selected}
+              updateFeature={this.updateFeature}
+              />
           </section>
-          <section className="main__summary">
-            <h3>NEW GREENLEAF 2018</h3>
             {summary}
-            <Total />
+            <Summary summary={this.state.selected}/>
+            <Total selected={this.state.selected}/>
+
+
             {/* <div className="summary__total">
               <div className="summary__total__label">Your Price: </div>
               <div className="summary__total__value">
@@ -98,7 +103,9 @@ class App extends Component {
                   .format(total) }
               </div>
             </div> */}
-          </section>
+
+            
+
         </main>
       </div>
     );
