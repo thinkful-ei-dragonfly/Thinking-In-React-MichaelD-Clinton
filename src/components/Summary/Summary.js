@@ -19,19 +19,6 @@ function Summary(props) {
       <h3>NEW GREENLEAF 2018</h3>
       {summary}
     </section>
-
-    // <main>
-    //     <section className="main__form"></section>
-    //     <h3>TECH SPECS AND CUSTOMIZATIONS</h3>
-    //     <div key={PLACEHOLDERFORKEYCHANGEHTIS} className="feature">Processor
-    //       <div className="feature__name"></div>
-    //       <ul className="feature__list">
-    //         <li className="feature__item">
-    //           <div className="feature__option feature__selected"></div>
-    //           </li>
-    //       </ul>
-    //     </div>
-    //   </main>
   );
 }
 
