@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
-import Cart from './components/Cart/Cart';
+import Total from './components/Total/Total';
 import Customizer from './components/Customizer/Customizer';
 import Features from './components/Features/Features';
 import SelectedFeatures from './components/SelectedFeatures/SelectedFeatures';
@@ -51,8 +51,8 @@ class App extends Component {
             </div>
         </div>)
 
-    const total = Object.keys(this.state.selected)
-          .reduce((acc, curr) => acc + this.state.selected[curr].cost, 0);    
+    // const total = Object.keys(this.state.selected)
+    //       .reduce((acc, curr) => acc + this.state.selected[curr].cost, 0);    
 
 
     const features = Object.keys(this.props.features)
@@ -90,13 +90,14 @@ class App extends Component {
           <section className="main__summary">
             <h3>NEW GREENLEAF 2018</h3>
             {summary}
-            <div className="summary__total">
+            <Total />
+            {/* <div className="summary__total">
               <div className="summary__total__label">Your Price: </div>
               <div className="summary__total__value">
               { new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD'})
                   .format(total) }
               </div>
-            </div>
+            </div> */}
           </section>
         </main>
       </div>
