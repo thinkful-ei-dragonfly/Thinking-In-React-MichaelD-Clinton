@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from './components/Header/Header';
+import Cart from './components/Cart/Cart';
+import Customizer from './components/Customizer/Customizer';
+import Features from './components/Features/Features';
+import SelectedFeatures from './components/SelectedFeatures/SelectedFeatures';
+
 
 class App extends Component {
   constructor(props){
@@ -75,11 +81,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header>
-          <h1>ELF Computing</h1>
-          <h3>Laptops</h3>
-          <h5>Customize your laptop</h5>  
-        </header>      
+        <Header /> 
         <main>
           <section className="main__form">
             <h3>TECH SPECS AND CUSTOMIZATIONS</h3>
