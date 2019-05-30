@@ -1,26 +1,19 @@
 import React from "react";
+import Feature from "../Feature/Feature";
 
 function Features(props) {
   const features = Object.keys(props.features).map(key => {
     const options = props.features[key].map((item, index) => {
-      const selectedClass =
-        item.name === props.selected[key].name ? "feature__selected" : "";
-      const featureClass = "feature__option " + selectedClass;
-      return (
-        <li key={index} className="feature__item">
-          <div
-            className={featureClass}
-            onClick={e => props.updateFeature(key, item)}
-          >
-            {item.name}(
-            {new Intl.NumberFormat("en-US", {
-              style: "currency",
-              currency: "USD"
-            }).format(item.cost)}
-            )
-          </div>
-        </li>
-      );
+      return(<Feature 
+        item={item}
+        selected={props.selected}
+        itemKey={key}
+        index={index}
+        updateFeature={props.updateFeature}
+        name={props.name}
+        cost={props.cost}
+      />)
+      ;
     });
 
     return (

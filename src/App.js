@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Total from "./components/Total/Total";
-import Summary from "./components/Summary/Summary";
+import SummaryList from "./components/SummaryList/SummaryList";
 import Features from "./components/Features/Features";
+
 
 class App extends Component {
   constructor(props) {
@@ -56,7 +57,7 @@ class App extends Component {
             />
           </section>
           <section>
-            <Summary
+            <SummaryList
               features={this.props.features}
               selected={this.state.selected}
               updateFeature={this.updateFeature}
